@@ -1,36 +1,103 @@
-LineageOS
-===========
+LineageOS for Redmi Note 7 Pro (violet)
+========================================
 
-Getting started
+Device Information
+------------------
+
+* **Device**: Xiaomi Redmi Note 7 Pro
+* **Codename**: violet
+* **Release Date**: February 2019
+* **SoC**: Qualcomm Snapdragon 675 (SM6150)
+* **RAM**: 4GB/6GB
+* **Storage**: 64GB/128GB
+* **Display**: 6.3" FHD+ (2340x1080) IPS LCD
+* **Camera**: 48MP main + 5MP depth (rear), 13MP (front)
+* **Battery**: 4000mAh
+
+Getting Started
 ---------------
 
-To get started with Android/LineageOS, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
+To get started with building LineageOS for Redmi Note 7 Pro, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
 
-To initialize your local repository using the LineageOS trees, use a command like this:
-```
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
-```
-Then to sync up:
-```
-repo sync
-```
-Please see the [LineageOS Wiki](https://wiki.lineageos.org/) for building instructions, by device.
+### Initialize Repository
 
+To initialize your local repository using the LineageOS trees for violet:
+```bash
+repo init -u https://github.com/AOSPInsider/android.git -b fourteen-violet --git-lfs
+```
 
-Submitting patches
+### Sync Repository
+```bash
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+```
+
+### Device-Specific Setup
+
+1. **Device Tree**: `device/xiaomi/violet`
+2. **Vendor Blobs**: `vendor/xiaomi/violet`
+3. **Kernel**: `kernel/xiaomi/violet`
+
+### Building LineageOS
+
+```bash
+# Set up environment
+source build/envsetup.sh
+
+# Choose target
+lunch lineage_violet-userdebug
+
+# Build ROM
+m bacon
+```
+
+Device-Specific Notes
+--------------------
+
+### Known Issues
+- Camera: Some advanced camera features may not work perfectly
+- Fingerprint: Works with LineageOS implementation
+- NFC: Fully functional
+- VoLTE: Supported (carrier dependent)
+
+### Installation Instructions
+
+1. **Unlock Bootloader**: Follow Xiaomi's official unlocking process
+2. **Install Custom Recovery**: TWRP recommended
+3. **Flash LineageOS**: Use recovery to flash the built ROM
+4. **Flash GApps** (optional): OpenGApps or MindTheGapps
+
+### Firmware Requirements
+
+- **Minimum Firmware**: MIUI 12.5 (Android 11) based firmware recommended
+- **Modem**: Latest available for your region
+
+Submitting Patches
 ------------------
-Patches are always welcome! Please submit your patches via LineageOS Gerrit!
 
-Simply follow our guide on [how to submit patches](https://wiki.lineageos.org/submitting-patch-howto.html).
+Patches for violet-specific issues are welcome! Please submit your patches via:
 
-To view the status of your and others' patches, visit [LineageOS Gerrit Code Review](https://review.lineageos.org/).
+1. **Device Tree Issues**: Create PR to device tree repository
+2. **Kernel Issues**: Submit to kernel repository
+3. **General LineageOS**: Follow [LineageOS patch submission guide](https://wiki.lineageos.org/submitting-patch-howto.html)
 
+Support & Resources
+-------------------
 
-Buildbot
---------
+- **XDA Thread**: [LineageOS for Redmi Note 7 Pro](https://forum.xda-developers.com/c/redmi-note-7-pro.8731/)
+- **Telegram**: LineageOS violet support groups
+- **Wiki**: [LineageOS Wiki](https://wiki.lineageos.org/)
 
-All supported devices are built weekly and periodically as changes are committed to ensure the source trees remain buildable.
+Maintainer Information
+----------------------
 
-You can view the current build statuses at [LineageOS Buildkite](https://buildkite.com/lineageos).
+- **Branch**: fourteen-violet
+- **LineageOS Version**: 21.0 (Android 14)
+- **Last Updated**: January 2025
 
-Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/).
+### Build Status
+
+Current build status and downloads will be available once builds are automated.
+
+---
+
+**Note**: This is a custom build branch (fourteen-violet) maintained separately from official LineageOS builds.
