@@ -1,36 +1,62 @@
-LineageOS
-===========
+LineageOS for ASUS ZenFone Max Pro M2 (X01BD)
+===============================================
 
-Getting started
+Device Information
+------------------
+
+* **Device**: ASUS ZenFone Max Pro M2
+* **Codename**: X01BD
+* **Release Date**: December 2018
+* **SoC**: Qualcomm Snapdragon 660 (SDM660)
+* **RAM**: 3GB/4GB/6GB
+* **Storage**: 32GB/64GB
+* **Display**: 6.26" FHD+ (2280x1080) IPS LCD
+* **Camera**: 12MP + 5MP (rear), 13MP (front)
+* **Battery**: 5000mAh
+
+Getting Started
 ---------------
 
-To get started with Android/LineageOS, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
+To get started with building LineageOS for ASUS ZenFone Max Pro M2, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
 
-To initialize your local repository using the LineageOS trees, use a command like this:
+### Initialize Repository
+
+To initialize your local repository using the LineageOS trees for X01BD:
+```bash
+repo init -u https://github.com/AOSPInsider/android.git -b fourteen-asus --git-lfs
 ```
-repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
+
+### Sync Repository
+```bash
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```
-Then to sync up:
+
+### Device-Specific Setup
+
+1. **Device Tree**: `device/asus/X01BD`
+2. **Vendor Blobs**: `vendor/asus/X01BD`
+3. **Kernel**: `kernel/asus/X01BD`
+
+### Building LineageOS
+
+```bash
+# Set up environment
+source build/envsetup.sh
+
+# Choose target
+lunch lineage_X01BD-userdebug
+
+# Build ROM
+m bacon
 ```
-repo sync
-```
-Please see the [LineageOS Wiki](https://wiki.lineageos.org/) for building instructions, by device.
 
+### Notes
 
-Submitting patches
-------------------
-Patches are always welcome! Please submit your patches via LineageOS Gerrit!
+- This build is based on LineageOS 21.0 (Android 14)
+- Make sure you have at least 200GB of free disk space
+- Build time varies depending on your hardware (typically 2-6 hours)
+- For troubleshooting, check the [LineageOS Wiki](https://wiki.lineageos.org/)
 
-Simply follow our guide on [how to submit patches](https://wiki.lineageos.org/submitting-patch-howto.html).
+### Credits
 
-To view the status of your and others' patches, visit [LineageOS Gerrit Code Review](https://review.lineageos.org/).
-
-
-Buildbot
---------
-
-All supported devices are built weekly and periodically as changes are committed to ensure the source trees remain buildable.
-
-You can view the current build statuses at [LineageOS Buildkite](https://buildkite.com/lineageos).
-
-Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/).
+Special thanks to the LineageOS team and ASUS device maintainers for their continuous work on keeping this device supported.
