@@ -50,13 +50,54 @@ lunch lineage_X01BD-userdebug
 m bacon
 ```
 
-### Notes
+Device-Specific Notes
+--------------------
 
-- This build is based on LineageOS 21.0 (Android 14)
-- Make sure you have at least 200GB of free disk space
-- Build time varies depending on your hardware (typically 2-6 hours)
-- For troubleshooting, check the [LineageOS Wiki](https://wiki.lineageos.org/)
+### Known Issues
+- Camera: Some advanced camera features may not work perfectly
+- Fingerprint: Works with LineageOS implementation
+- NFC: Not available on this device
+- VoLTE: Supported (carrier dependent)
 
-### Credits
+### Installation Instructions
 
-Special thanks to the LineageOS team and ASUS device maintainers for their continuous work on keeping this device supported.
+1. **Unlock Bootloader**: Follow ASUS's official unlocking process
+2. **Install Custom Recovery**: TWRP recommended
+3. **Flash LineageOS**: Use recovery to flash the built ROM
+4. **Flash GApps** (optional): OpenGApps or MindTheGapps
+
+### Firmware Requirements
+
+- **Minimum Firmware**: Android 10 based firmware recommended
+- **Modem**: Latest available for your region
+
+Submitting Patches
+------------------
+
+Patches for X01BD-specific issues are welcome! Please submit your patches via:
+
+1. **Device Tree Issues**: Create PR to device tree repository
+2. **Kernel Issues**: Submit to kernel repository
+3. **General LineageOS**: Follow [LineageOS patch submission guide](https://wiki.lineageos.org/submitting-patch-howto.html)
+
+Support & Resources
+-------------------
+
+- **XDA Thread**: [LineageOS for ASUS ZenFone Max Pro M2](https://forum.xda-developers.com/c/asus-zenfone-max-pro-m2.8486/)
+- **Telegram**: LineageOS X01BD support groups
+- **Wiki**: [LineageOS Wiki](https://wiki.lineageos.org/)
+
+Maintainer Information
+----------------------
+
+- **Branch**: fourteen-asus
+- **LineageOS Version**: 21.0 (Android 14)
+- **Last Updated**: January 2025
+
+### Build Status
+
+Current build status and downloads will be available once builds are automated.
+
+---
+
+**Note**: This is a custom build branch (fourteen-asus) maintained separately from official LineageOS builds.
