@@ -1336,5 +1336,6 @@
   </project>
 
   <include name="snippets/lineage.xml" />
+  <include name="snippets/violet.xml" />
   <include name="snippets/pixel.xml" />
 </manifest>

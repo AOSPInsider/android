@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Define AOSPInsider remote -->
+  <remote name="aospinsider" 
+          fetch="https://github.com/AOSPInsider/" 
+          review="" />
+  
+  <!-- Remove upstream device repositories if they exist -->
+  <remove-project name="LineageOS/android_device_xiaomi_violet" />
+  <remove-project name="LineageOS/android_kernel_xiaomi_violet" />
+  <remove-project name="LineageOS/android_vendor_xiaomi_violet" />
+  
+  <!-- Add Xiaomi Violet custom repositories -->
+  <project path="device/xiaomi/violet" 
+           name="device_xiaomi_violet" 
+           remote="aospinsider" 
+           revision="fourteen-violet" />
+  
+  <project path="kernel/xiaomi/violet" 
+           name="kernel_xiaomi_violet" 
+           remote="aospinsider" 
+           revision="fourteen-violet" />
+  
+  <project path="vendor/xiaomi/violet" 
+           name="android_vendor_xiaomi_violet" 
+           remote="aospinsider" 
+           revision="fourteen-violet" />
+</manifest>

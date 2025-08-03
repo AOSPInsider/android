@@ -14,6 +14,24 @@ Device Information
 * **Camera**: 48MP main + 5MP depth (rear), 13MP (front)
 * **Battery**: 4000mAh
 
+AOSPInsider Manifest Repository
+--------------------------------
+
+This is the AOSPInsider manifest repository with integrated Xiaomi Violet device support.
+
+**Quick Start:**
+```bash
+repo init -u https://github.com/AOSPInsider/android -b fourteen-violet
+repo sync
+source build/envsetup.sh
+lunch lineage_violet-userdebug
+brunch violet
+```
+
+**Documentation:**
+- [Manifest Repository Guide](README_MANIFEST.md)
+- [Violet Device Integration Details](VIOLET_DEVICE_INTEGRATION.md)
+
 Getting Started
 ---------------
 
