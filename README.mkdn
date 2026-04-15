@@ -1,36 +1,43 @@
-LineageOS
-===========
+ArjunaOS Manifest
+=================
+
+This repository is the manifest entry point for **ArjunaOS**.
+
+Right now it is still heavily based on the LineageOS manifest structure on branch `lineage-23.2`. That is intentional. ArjunaOS is being built as a live tutorial series, so this repo will stay close to upstream first and then grow its own manifest entries as the articles move forward.
 
 Getting started
 ---------------
 
-To get started with Android/LineageOS, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
+To initialize a local ArjunaOS workspace, run:
 
-To initialize your local repository using the LineageOS trees, use a command like this:
 ```
 repo init -u https://github.com/AOSPInsider/android.git -b lineage-23.2 --git-lfs
 ```
-Then to sync up:
+
+Then sync the source tree:
+
 ```
 repo sync
 ```
-Please see the [LineageOS Wiki](https://wiki.lineageos.org/) for building instructions, by device.
 
+At this stage, most projects in the workspace still come from upstream LineageOS and AOSP. ArjunaOS-specific repositories will be added here only when the tutorial reaches the point where they are needed.
 
-Submitting patches
-------------------
-Patches are always welcome! Please submit your patches via LineageOS Gerrit!
+What this repo is for
+---------------------
 
-Simply follow our guide on [how to submit patches](https://wiki.lineageos.org/submitting-patch-howto.html).
+- owning the manifest entry point for ArjunaOS from day one
+- keeping the tutorial flow reproducible
+- adding ArjunaOS-specific repos gradually instead of inventing them too early
+- keeping the relationship with upstream LineageOS clear
 
-To view the status of your and others' patches, visit [LineageOS Gerrit Code Review](https://review.lineageos.org/).
+Notes
+-----
 
+- This repo is not the full source tree. It is the manifest repo that tells `repo` what to sync.
+- The current branch tracks the `lineage-23.2` base.
+- If you are following the tutorial, use this manifest repo even before ArjunaOS-specific repos exist.
 
-Buildbot
---------
+Contributing
+------------
 
-All supported devices are built weekly and periodically as changes are committed to ensure the source trees remain buildable.
-
-You can view the current build statuses at [LineageOS Buildkite](https://buildkite.com/lineageos).
-
-Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/).
+For now, changes here should stay focused on manifest and source-layout work related to ArjunaOS.
